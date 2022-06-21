@@ -1,0 +1,185 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+/* CONFIGURAÇÕES EM GERAL */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #97BFD9;
+    font-size: 1em;
+}
+
+body p {
+    padding: 1.5px;
+    text-align: justify;
+    text-indent: 40px;
+   
+}
+/*fim*/
+/* configuração do flex*/
+
+
+.paiA {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.paiA>h2 {
+    width: 100%;
+    background-color: black;
+    color: red;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.imgCentral {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+
+/*fim*/
+/*configuiraçao para fotos em geral*/
+.artistas {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    padding-bottom: 30px;
+}
+/*fim*/
+/* REDE SOCIAIS */
+/* */
+.icone {
+    width: auto;
+}
+
+.midiaSocial {
+    display: block;
+    float: left;
+   
+}
+.midiaSocial a {
+    text-decoration: none;
+    color: black;
+    background-color: aquamarine;
+}
+
+.midiaSocial a:hover {
+    background-color: red;
+}
+/*fim*/
+
+.pagina {
+    display: grid;
+    grid-template-areas:
+        "cabecalho""menu""conteudo""Extra""rodape";
+        row-gap: 1px;    
+}
+
+
+
+.icone {
+    width: auto;
+}
+
+
+.cabecalho{
+    grid-area: cabecalho;
+    background-color: green;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.titulo {
+    padding: 0;
+    text-shadow: 1px 1px 3px blue;
+
+}
+.logo {
+    width: 72px;
+}
+.menuPrincipal {
+    grid-area: menu;
+    background-color: blue;
+    text-align: center;
+}
+
+.itemMenu li {
+    list-style: none;
+
+}
+.itemMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.itemMenu li a {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+.conteudo {
+    grid-area: conteudo;
+    background-color: brown;
+    text-align: center;
+}
+.conteudoExtra {
+    grid-area: Extra;
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.rodape {
+    grid-area: rodape;
+    background-color: blueviolet;
+    text-align: center;
+}
+@media screen and (min-width:500px) {
+    .pagina {
+        
+        grid-template-areas:
+        "cabecalho cabecalho"
+        "menu menu"
+       "conteudo Extra"
+        "rodape rodape";
+        column-gap: 4px;
+        *row-gap: 4px;
+        /*grid-template-columns: 200px 4fr 2fr;*/
+        grid-template-columns: 2fr 1rf;
+            
+    }
+    .cabecalho {
+        flex-direction: row;
+    }
+    .titulo{
+        width: 100%;
+        text-align: center;
+    }
+    @media screen and (min-width:1280px) {
+        .pagina {
+            grid-template-areas:"cabecalho cabecalho cabecalho"
+                                "menu conteudo Extra"
+                                "rodape rodape rodape";
+            column-gap: 4px;
+            row-gap: 4px;
+            grid-template-columns: 1fr 4fr 1fr;
+            
+        }
+   
+        .itemMenu{
+            flex-direction: column;
+            text-align: center;
+        }
+}
+
+}
